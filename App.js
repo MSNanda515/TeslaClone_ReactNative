@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View } from 'react-native';
-import CarModel from "./components/CarModelView";
+import CarModel from "./components/CarModelView/CarModel";
 
 export default function App() {
   return (
