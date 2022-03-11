@@ -4,31 +4,39 @@ import {ImageBackground} from 'react-native';
 import styles from "./styles";
 import CustomButton from "../CustomButton/CustomButton";
 
-const CarModel = () => {
+const CarModel = ({name, tagline, image, taglineCta}) => {
     return (
         <>
             <View style={styles.carContainer}>
                 {/*Background image for the view*/}
                 <ImageBackground
-                    source={require('../../assets/images/ModelX.jpeg')}
+                    source={image}
                     style={styles.image}
                 />
 
                 {/*Description of the car*/}
                 <View style={styles.titles}>
-                    <Text styles={styles.title}>Model S</Text>
-                    <Text styles={styles.subtitle}>Starting at $69,420</Text>
+                    <Text styles={styles.title}>{name}</Text>
+                    <Text styles={styles.subtitle}>
+                        {tagline} {' '}
+                        <Text style={styles.subtitleCta}>
+                            {taglineCta}
+                        </Text>
+                    </Text>
                 </View>
-                <CustomButton type="primary" content="Custom Order"
-                    onPress={()=>{
-                        console.log("Custom order was pressed")
-                    }}
-                />
-                <CustomButton type="secondary" content="Existing Inventory"
-                  onPress={()=>{
-                      console.log("Existing inventory was pressed")
-                  }}
-                />
+
+                <View style={styles.buttonContainer}>
+                    <CustomButton type="primary" content="Custom Order"
+                                  onPress={()=>{
+                                      console.warn("Custom order was pressed")
+                                  }}
+                    />
+                    <CustomButton type="secondary" content="Existing Inventory"
+                                  onPress={()=>{
+                                      console.warn("Existing inventory was pressed")
+                                  }}
+                    />
+                </View>
             </View>
 
         </>

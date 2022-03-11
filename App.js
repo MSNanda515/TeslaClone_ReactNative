@@ -1,10 +1,15 @@
 import { StyleSheet, Text, View } from 'react-native';
 import CarModel from "./components/CarModelView/CarModel";
+import Constants from "./assets/constants";
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <CarModel/>
+      {Constants.carDetails.map((carDetail, key) => (
+          <CarModel name={carDetail.name} tagline={carDetail.tagline} taglineCta={carDetail.taglineCta}
+                    image={carDetail.image} key={key}/>
+      ))}
+
     </View>
   );
 }

@@ -11,7 +11,9 @@ const CustomButton = ({type, content, onPress}) => {
             <View style={styles.container}>
                 <Pressable
                     style={[styles.button, {backgroundColor: backgroundColor}]}
-                    onPress={onPress}
+                    onPress={() => {
+                        onPress();
+                    }}
                 >
                     <Text style={[styles.text, {color: foregroundColor}]}>{content}</Text>
                 </Pressable>
