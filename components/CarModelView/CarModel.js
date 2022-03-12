@@ -4,23 +4,23 @@ import {ImageBackground} from 'react-native';
 import styles from "./styles";
 import CustomButton from "../CustomButton/CustomButton";
 
-const CarModel = ({name, tagline, image, taglineCta}) => {
+const CarModel = ({car}) => {
     return (
         <>
             <View style={styles.carContainer}>
                 {/*Background image for the view*/}
                 <ImageBackground
-                    source={image}
+                    source={car.image}
                     style={styles.image}
                 />
 
                 {/*Description of the car*/}
                 <View style={styles.titles}>
-                    <Text styles={styles.title}>{name}</Text>
+                    <Text styles={styles.title}>{car.name}</Text>
                     <Text styles={styles.subtitle}>
-                        {tagline} {' '}
+                        {car.tagline} {' '}
                         <Text style={styles.subtitleCta}>
-                            {taglineCta}
+                            {car.taglineCta}
                         </Text>
                     </Text>
                 </View>
